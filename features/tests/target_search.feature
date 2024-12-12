@@ -5,5 +5,22 @@ Feature:Test for search
   Scenario: User can search for a product
   Given Open Target main page
   When Search for tea
-  Then Verify search results shown
-    # Enter steps here
+  Then Verify search results shown for tea
+
+
+Scenario: User can search for a product
+  Given Open Target main page
+  When Search for ball
+  Then Verify search results shown for ball
+
+ Scenario Outline: User can search for a product
+  Given Open Target main page
+  When Search for <product>
+  Then Verify search results shown for <product>
+  Examples:
+   |product   |
+   |coffee    |
+   |ball      |
+   |water     |
+
+

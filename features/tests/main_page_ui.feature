@@ -1,6 +1,7 @@
 # Created by BCC at 12/7/2024
-Feature: # Enter feature name here
+Feature: Test for main page UI
   # Enter feature description here
 
-  Scenario: # Enter scenario name here
-    # Enter steps here
+  Scenario: User can see correct amount of header links
+  Given Open Target main page
+  Then Verify atleast 1 header link is shown
