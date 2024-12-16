@@ -3,14 +3,12 @@ from selenium.webdriver.support import expected_conditions as EC
 from behave import given, when, then
 from time import sleep
 
-from sample_script import driver
+
 
 
 @then('Verify search results shown for {product}')
-def verify_product(context, product):
-    actual_result = context.driver.find_element(By.XPATH, "//div[@data-test='resultsHeading']").text
-    assert expected_result in actual_result, f'Expected text {product} not in  {actual_result}'
-    print('Test case passed')
+def verify_search_result(context, product):
+    context.app.search_result_page.verify_search_result(product)
 
 @when('Stored product name')
 def stored_product_name(context):

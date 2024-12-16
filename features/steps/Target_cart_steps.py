@@ -8,9 +8,7 @@ PRODUCT_NAME = (By.CSS_SELECTOR, "[data-test='content-wrapper'] h4")
 
 @then('Verify “Your cart is empty” message is shown')
 def verify_cart(context):
-    actual_result='Your cart is empty'
-    expected_result=context.driver.find_element(By.XPATH,"//h1[@class='sc-fe064f5c-0 dtCtuk']").text
-    assert actual_result in expected_result
+    context.app.cart_page.verify_cart()
 
 
 @when("Click Add to cart button")
