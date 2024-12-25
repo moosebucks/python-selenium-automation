@@ -10,6 +10,10 @@ from time import sleep
 def verify_search_result(context, product):
     context.app.search_result_page.verify_search_result(product)
 
+@then('Verify search term {product} in URL')
+def verify_search_url(context, product):
+    context.app.search_result_page.verify_search_url(product)
+
 @when('Stored product name')
 def stored_product_name(context):
     context.product_name = context.driver.find_element(*PRODUCT_NAME).text

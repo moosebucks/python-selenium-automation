@@ -6,13 +6,14 @@ Feature:Test for search
   Given Open Target main page
   When Search for tea
   Then Verify search results shown for tea
- #hjh
+  Then Verify search term tea in URL
 
 
   Scenario: User can search for a product
   Given Open Target main page
   When Search for ball
   Then Verify search results shown for ball
+
 
  Scenario Outline: User can search for a product
   Given Open Target main page
