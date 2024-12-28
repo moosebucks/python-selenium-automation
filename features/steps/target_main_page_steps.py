@@ -29,6 +29,7 @@ def click_cart(context):
 def click_on_target_circle(context):
     context.driver.find_element(By.ID, 'utilityNav-circle').click()
 
+
 #Target circle page
 @then('Verify atleast {Expected_result} benefit cells are shown')
 def verify_result(context, Expected_result):

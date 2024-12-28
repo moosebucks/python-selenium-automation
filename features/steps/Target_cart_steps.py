@@ -35,7 +35,7 @@ def verify_cart_item(context, amount):
 
 @then('Verify cart has correct product')
 def verify_product_name(context):
-    context.app.cart_page.verify_product_name()
+    context.app.cart_page.verify_product_name(context.product_name)
     # actual_name = context.driver.find_element(By.CSS_SELECTOR, "[data-test='cartItem-title']").text
     # print(f'Actual product in cart name: {actual_name}')
     # print(f'Product name stored earlier: {context.product_name}')
