@@ -1,5 +1,6 @@
 from pages.base_page import BasePage
 from pages.cart_page import CartPage
+from pages.help_page import HelpPage
 from pages.privacy_policy_page import PrivacyPolicyPage
 from pages.search_result_page import SearchResultPage
 from pages.main_page import MainPage
@@ -21,3 +22,4 @@ class Application:
         self.sign_in_page = SignInPage(driver)
         self.privacy_policy_page = PrivacyPolicyPage(driver)
         self.terms_and_conditions_page = TermsAndConditionsPage(driver)
+        self.help_page = HelpPage(driver)

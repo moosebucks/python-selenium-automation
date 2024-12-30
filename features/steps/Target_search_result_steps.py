@@ -18,3 +18,12 @@ def verify_search_url(context, product):
 def stored_product_name(context):
     context.product_name = context.driver.find_element(*PRODUCT_NAME).text
     print(f'Product stored: {context.product_name}')
+
+@when('Hover favorites icon')
+def hover_favorites_icon(context):
+    context.app.search_result_page.hover_favorites_icon()
+
+@then('Verify Favorites tooltip is shown')
+def favorites_tootltip(context):
+    context.app.search_result_page.verify_fav_tooltip()
+

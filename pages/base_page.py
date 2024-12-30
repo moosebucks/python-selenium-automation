@@ -1,6 +1,7 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
+from selenium.webdriver.common.action_chains import ActionChains
+from time import sleep
 
 class BasePage:
 
@@ -41,6 +42,21 @@ class BasePage:
     def switch_to_window_by_id(self, window_id):
         self.driver.switch_to.window(window_id)
         print('Current window:',self.driver.current_window_handle )
+
+    def hover_element(self, *locator):
+        element= self.find_element(*locator)
+        actions = ActionChains(self.driver)
+        actions.move_to_element(element)
+        actions.perform()
+        sleep(2)
+
+    def hover_element_and_click(self, *locator):
+        element = self.find_element(*locator)
+        actions = ActionChains(self.driver)
+        actions.move_to_element(element)
+        actions.click()
+        actions.perform()
+
 
     def wait_for_element_visible(self, *locator):
         return self.wait.until(
