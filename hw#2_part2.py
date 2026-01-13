@@ -24,4 +24,4 @@ assert expected_text in actual_text, f'Expected text {expected_text} not in actu
 print('Test case PASSED')
 
 driver.find_element(By.ID, 'login')
-sleep(2)
+sleep(1)
