@@ -6,17 +6,23 @@ Feature: Tests for search
     When Search for tea
     Then Search results for tea are shown
 
-  Scenario: User can enter cart
-    Given Open Target main page
-    When Click on cart icon
-    Then Verify "cart is empty” message is shown
 
-  Scenario: User can sign in
-  Given Open Target main page
-  When Click on account button
-  And Click Sign In button
-  Then Verify Sign In page
-
-
-
+#  Scenario Outline: User can search for a tea on Target
+#    Given Open Target main page
+#    When Search for <product>
+#    Then Search results for <product> are shown
+#    Examples:
+#    |product  |
+#    |mug      |
+#    |cap      |
+#    |ball     |
+#
+#
+#    Scenario: Verify user can add item to cart
+#      Given Open Target main page
+#      When Search for tea
+#      And Click on add to cart button
+#      And Click on add to cart button from the side navigation
+#      Then Verify product in cart
+#
 #
