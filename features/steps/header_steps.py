@@ -18,8 +18,8 @@ def click_cart_icon(context):
 
 @when('Click on account button')
 def click_account_button(context):
-    context.driver.find_element(*ACCOUNT_BUTTON).click()
+    context.app.header.click_account_btn()
 
-@when('Click Sign In button')
+@when('From right side navigation menu, click Sign In')
 def click_sign_in_button(context):
-    context.driver.find_element(*SIGNIN_BUTTON).click()
+    context.app.header.click_sign_in_btn()

@@ -14,13 +14,9 @@ def verify_search_results(context, expected_product):
 
 @when("Click on add to cart button")
 def add_to_cart(context):
-    context.driver.find_element(*ADD_TO_CART_BUTTON).click()
-    sleep(2)
+    context.app.search_results_page.click_add_to_cart_btn()
     # context.driver.wait.until()
 
 @when('Click on add to cart button from the side navigation')
 def click_on_add_cart_side_nav(context):
-    context.driver.find_element(*ADD_TO_CART_BUTTON_SIDE_NAV).click()
-    context.driver.find_element(By.CSS_SELECTOR, "[aria-label='close").click()
-    sleep(4)
-
+    context.app.search_results_page.click_on_add_cart_side_nav()
