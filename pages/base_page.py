@@ -9,8 +9,8 @@ class Page:
         self.driver.wait = WebDriverWait(driver, timeout=10)
         self.base_url = 'https://www.target.com'
 
-    def open_url(self, end_url=''):
-        self.driver.get(f'{self.base_url}{end_url}')
+    # def open_url(self, end_url=''):
+    #     self.driver.get(f'{self.base_url}{end_url}')
 
     def open_url(self, url):
         self.driver.get(url)
@@ -27,6 +27,23 @@ class Page:
     def input_text(self, text, *locator):
         self.driver.find_element(*locator).send_keys(text)
         self.driver.find_element(*locator).send_keys(text)
+
+    def get_current_window_handle(self):
+        return self.driver.current_window_handle
+
+    def switch_to_new_window(self):
+        self.driver.wait.until(EC.new_window_is_opened)
+        all_windows = self.driver.window_handles
+        print('All windows: ', all_windows)
+        print('Switching to window: ', all_windows[1])
+        self.driver.switch_to.window(all_windows[1])
+
+    def switch_to_window_by_id(self, window_id):
+        print('Switching to window: ', window_id)
+        self.driver.switch_to.window(window_id)
+
+    def close_page(self):
+        self.driver.close()
 
     def wait_until_element_present(self, *locator):
         self.driver.wait.until(

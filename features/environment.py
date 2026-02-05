@@ -14,6 +14,35 @@ def browser_init(context):
     service = Service(driver_path)
     context.driver = webdriver.Chrome(service=service)
 
+
+    ### SAFARI ###
+    # context.driver = webdriver.Firefox()
+    # context.driver = webdriver.Safari()
+
+    ### HEADLESS MODE ####
+    # options = webdriver.ChromeOptions()
+    # options.add_argument('headless')
+    # context.driver = webdriver.Chrome(
+    #     options=options
+    # )
+
+    ### BROWSERSTACK ###
+    # Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settings
+    # bs_user = 'moussadiakite_z6gDPL'
+    # bs_key = 'bmkPWda7brHPT3FX4Bzy'
+    #
+    # url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
+    # options = Options()
+    # bstack_options = {
+    #     "os" : "Windows",
+    #     "osVersion" : "11",
+    #     "browserVersion" : "latest",
+    #     'browserName': 'Edge',
+    #     'sessionName': scenario_name,
+    # }
+    # options.set_capability('bstack:options', bstack_options)
+    # context.driver = webdriver.Remote(command_executor=url, options=options)
+
     context.driver.maximize_window()
     context.driver.implicitly_wait(4)
     context.driver.wait = WebDriverWait(context.driver, 4)
