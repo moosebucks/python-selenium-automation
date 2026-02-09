@@ -1,6 +1,7 @@
 from pages.base_page import Page
 from pages.cart_page import CartPage
 from pages.header import Header
+from pages.help_page import HelpPage
 from pages.main_page import MainPage
 from pages.search_results_page import SearchResultsPage
 from pages.sign_in_page import SignInPage
@@ -20,3 +21,4 @@ class Application:
         self.target_app_page = TargetAppPage(driver)
         self.base_page=Page(driver)
         self.terms_conditions_page = TermsConditionsPage(driver)
+        self.help_page = HelpPage(driver)

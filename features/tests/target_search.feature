@@ -25,5 +25,11 @@ Feature: Tests for search
       And Click on add to cart button from the side navigation
       And Click on cart icon
       Then Verify product in cart
+
+  Scenario: User can see favorites tooltip for search results
+    Given Open Target main page
+    When Search for tea
+    And Hover favorites icon
+    Then Favorites tooltip is shown
 #
 #

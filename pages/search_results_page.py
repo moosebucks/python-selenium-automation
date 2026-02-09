@@ -10,6 +10,8 @@ class SearchResultsPage(Page):
     SEARCH_RESULTS_TEXT = (By.XPATH, "//div[contains(@class,'styles_listingPageResultsCount')]")
     ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, "[id*='addToCartButtonOrTextId']")
     ADD_TO_CART_BUTTON_SIDE_NAV = (By.CSS_SELECTOR, "[data-test='content-wrapper'] [id*='addToCart']")
+    FAV_ICON = (By.CSS_SELECTOR, '[data-test="FavoritesButton"]')
+    FAV_TOOLTIP = (By.XPATH, "//*[text()='Click to sign in and save']")
 
     def verify_search_results(self, expected_product):
         self.verify_partial_text(expected_product, *self.SEARCH_RESULTS_TEXT)
@@ -21,4 +23,10 @@ class SearchResultsPage(Page):
     def click_on_add_cart_side_nav(self):
         self.wait_until_clickable_click(*self.ADD_TO_CART_BUTTON_SIDE_NAV)
         self.wait_until_clickable_click(By.CSS_SELECTOR, "[aria-label='close']")
+
+    def hover_fav_icon(self):
+        self.hover_element(*self.FAV_ICON)
+
+    def verify_fav_tooltip(self):
+        self.find_element(*self.FAV_TOOLTIP)
 
